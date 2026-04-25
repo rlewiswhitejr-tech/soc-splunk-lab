@@ -1,82 +1,58 @@
-# soc-splunk-lab
-SOC home lab using Splunk and Sysmon for log analysis, threat detection, and security monitoring.
+# Splunk Home SOC Lab: Windows Endpoint Monitoring
 
----
+**Author:** Ronald White Jr.  
+**Project Type:** Home SOC / SIEM Portfolio Lab  
+**Tools:** Splunk Enterprise, Splunk Universal Forwarder, Windows Event Logs, Sysmon  
+**Focus Areas:** Endpoint monitoring, brute-force detection, PowerShell activity, malware simulation, SOC triage, incident reporting
 
-## 📊 Dashboard Features
+## Executive Summary
 
-### Splunk Dashboard
-- Authentication activity monitoring
-- Failed login trends
-- Event distribution
-- Real-time event feed
+This project demonstrates a practical home SOC lab built with Splunk. The lab collects Windows security telemetry, analyzes suspicious endpoint activity, and presents findings through dashboards, SPL searches, detection rules, and incident writeups.
 
-### Grafana Dashboard
-- Process execution metrics
-- Network activity visualization
-- Top executed processes
+The goal is to show real SOC analyst skills, including:
 
----
+- Installing and configuring a SIEM
+- Ingesting Windows endpoint logs
+- Creating detection searches
+- Investigating suspicious activity
+- Building dashboards for leadership and analysts
+- Writing incident reports based on observable evidence
 
-## 🧪 Testing & Simulation
-To generate realistic data:
-- Performed multiple failed login attempts
-- Executed commands (whoami, ipconfig, netstat, PowerShell)
-- Generated network activity
-- Observed real-time dashboard updates
+## Lab Architecture
 
----
+```text
+Windows Endpoint
+   |
+   |  Windows Event Logs + Sysmon Logs
+   v
+Splunk Universal Forwarder
+   |
+   |  TCP Forwarding
+   v
+Splunk Enterprise Indexer/Search Head
+   |
+   v
+SOC Dashboard + SPL Detection Searches
+```
 
-## 📸 Screenshots
+## Data Sources
 
-### Dashboard Overview
-![Dashboard](screenshots/dashboard-overview.png)
+| Source | Purpose |
+|---|---|
+| Windows Security Logs | Login activity, failed logons, account events |
+| Windows PowerShell Logs | Script execution and command-line activity |
+| Sysmon Logs | Process creation, network connections, file activity |
+| Splunk Internal Logs | Forwarder/indexer health and ingestion status |
 
-### Failed Login Detection
-![Failed Logins](screenshots/failed-logins.png)
+## SOC Use Cases Included
 
-### Sysmon Process Activity
-![Sysmon](screenshots/sysmon-processes.png)
+1. Brute-force login detection
+2. Suspicious PowerShell execution
+3. New process execution monitoring
+4. Possible malware execution behavior
+5. Endpoint visibility dashboard
+6. Incident triage documentation
 
-### Network Activity
-![Network](screenshots/network-activity.png)
+## Portfolio Value
 
-### Top Processes
-![Processes](screenshots/top-processes.png)
-
-### Live SOC Feed
-![Live Feed](screenshots/live-feed.png)
-
----
-
-## 🧠 Key Skills Demonstrated
-- SIEM configuration and log ingestion
-- Detection engineering using SPL
-- Endpoint monitoring with Sysmon
-- Security event analysis
-- Dashboard development
-
----
-
-## 💼 Resume Highlights
-- Built a SOC home lab using Splunk and Sysmon
-- Developed detection queries for authentication and endpoint activity
-- Created dashboards for real-time monitoring
-- Integrated Grafana for visualization
-
----
-
-## 🎤 Interview Talking Point
-"I built a SOC lab using Splunk and Sysmon to monitor authentication and endpoint activity, created detection queries for suspicious behavior, and visualized results using dashboards in Splunk and Grafana."
-
----
-
-## 🚀 Future Improvements
-- Add alerting and notifications
-- Simulate advanced cyber attacks
-- Integrate threat intelligence feeds
-- Automate data ingestion
-
----
-
-## 📁 Project Structure
+This lab is designed to show recruiters and hiring managers that I can move beyond theory and build a working SOC environment. It reflects hands-on skills in SIEM operations, endpoint monitoring, log analysis, detection engineering, and incident response documentation.
